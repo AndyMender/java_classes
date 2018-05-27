@@ -16,7 +16,10 @@ class ReadFile {
             return;
         }
 
-        // read file and output to stdout, byte by byte
+        // read file and output to stdout, byte by byte;
+        // EOF is marked with -1 (if exceeded, EOFException will be raised);
+        // catching FileNotFoundException is not mandatory, because it's a child class
+        // of IOException - here it provides extra error reporting
         try {
             aFile = new FileInputStream(args[0]);
             do {
@@ -34,5 +37,7 @@ class ReadFile {
                 System.out.println("FATAL ERROR: Cannot close file descriptor.");
             }
         }
+        // in Python, the above scenario can be handled using a context manager
+        // which implements closing of the file on exit from the context/scope
     }
 }
