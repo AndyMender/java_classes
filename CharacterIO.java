@@ -11,7 +11,7 @@ class CharacterIO {
 		// encoding accessible via java.nio.charset.Charset.defaultCharset()
 		// NOTE2: all character stream classes are derived from Reader or Writer
 		
-		// below code requires xanadu.txt to be found here:
+		// below code requires xanadu.txt, to be found here:
 		// https://docs.oracle.com/javase/tutorial/essential/io/streams.html
 		try(FileReader inFile = new FileReader("xanadu.txt");
 			FileWriter outFile = new FileWriter("outfile.txt");) {
