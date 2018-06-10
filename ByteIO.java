@@ -4,7 +4,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 class ByteIO {
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) {
 		// NOTE: all byte stream classes are derived from InputStream
 		// or OutStream
 		int c;
