@@ -31,7 +31,8 @@ class FormatDemo {
         printer.println("Here is your text:");
         for (String s: string_array) {
             // legacy C-style printf() could also be used here
-            printer.format("This is your line: %s\n", s);
+            // %n defines a platform-specific terminator (recommended!)
+            printer.format("This is your line: %s%n", s);
 
             // String has a format() method as well for building formatted strings
             // a la C-style sprintf
