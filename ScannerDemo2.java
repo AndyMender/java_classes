@@ -17,7 +17,11 @@ class ScannerDemo2 {
 			= new Scanner(new BufferedReader(new FileReader("usnumbers.txt")));) {
 			// set the US locale to handle the thousands comma notation
 			s.useLocale(Locale.US);
-			// each of the primitive types has an individual method
+			// by default Scanner uses whitespace as defined in java.lang.Character.isWhitespace()
+            // however, a different delimiter can be used:
+            // s.useDelimiter(",")  would use a comma as the separator
+
+			// each of the primitive types has an individual nextType() method
 			// NOTE: overloading wouldn't work due to the underlying
 			// char-based byte I/O approach
 			while (s.hasNext()) {
