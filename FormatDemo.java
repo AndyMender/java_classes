@@ -3,6 +3,7 @@ import java.io.IOException;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 
 import java.nio.charset.Charset;
@@ -19,7 +20,8 @@ class FormatDemo {
         BufferedReader reader
                 = new BufferedReader(new InputStreamReader(System.in, charset));
         // printer object
-        PrintWriter printer = new PrintWriter(System.out, true);
+        PrintWriter printer
+                = new PrintWriter(new OutputStreamWriter(System.out, charset), true);
 
         // capture text
         printer.println("Write some text [max 5 lines]:");
