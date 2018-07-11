@@ -1,1 +1,5 @@
-This is a draft/sketch repository for my Java classes based on the Java introductory book by Herbert Schildt and the official Java tutorials from Oracle
+This is a draft/sketch repository for my Java classes based on tutorials from various sources:  
+- the Java introductory book by Herbert Schildt (Java 7 and Java 8)  
+- official Java tutorials from Oracle 
+- W3 resources 
+
