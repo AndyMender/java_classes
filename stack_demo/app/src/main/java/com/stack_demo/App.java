@@ -32,14 +32,14 @@ public class App {
      * Creates and populates a small int Stack.
      * @return a populated int Stack
      */
-    public static Stack<Integer> createIntStack(int size) {
+    public static Stack<Integer> createIntStack(int size, int maxValue) {
         Stack<Integer> intStack = new Stack<Integer>(); 
 
         Random randGen = new Random();
 
         // add items
         for (int i = 0; i < 5; i++) {
-            intStack.push(randGen.nextInt(100));
+            intStack.push(randGen.nextInt(maxValue));
         }
 
         return intStack;
@@ -64,7 +64,7 @@ public class App {
 
 
         // create and print int Stack
-        Stack<Integer> intStack = App.createIntStack(5);
+        Stack<Integer> intStack = App.createIntStack(5, 100);
         App.printStack(intStack);
         
 
