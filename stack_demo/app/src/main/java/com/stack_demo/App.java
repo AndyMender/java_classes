@@ -3,12 +3,73 @@
  */
 package com.stack_demo;
 
+import java.util.Arrays;
+import java.util.Random;
+import java.util.Stack;
+
 public class App {
-    public String getGreeting() {
+    /**
+     * Default method used in Junit tests to make sure the suite is working correctly.
+     * @return Simple string for validation
+    */
+    public static String getGreeting() {
         return "Hello World!";
     }
 
+    /**
+     * Static method to print out elements of a Stack one-by-one.
+     * @param stack Stack to print
+    */
+    public static void printStack(Stack<?> stack) {
+        System.out.println("Printing stack:");
+        while (!stack.empty()) {
+            System.out.print(stack.pop() + " ");
+        }
+        System.out.println();
+    }
+
+    /**
+     * Creates and populates a small int Stack.
+     * @return a populated int Stack
+     */
+    public static Stack<Integer> createIntStack(int size) {
+        Stack<Integer> intStack = new Stack<Integer>(); 
+
+        Random randGen = new Random();
+
+        // add items
+        for (int i; i < 5; i++) {
+            intStack.push(randGen.nextInt(100));
+        }
+
+        return intStack;
+    }
+
+    /**
+     * Creates and populates a small String Stack.
+     * @return a populated string Stack
+     */
+    public static Stack<String> createStringStack() {
+        Stack<String> stringStack = new Stack<String>();
+        stringStack.push("piggy");
+        stringStack.push("sofa");
+        stringStack.push("peas");
+        stringStack.push("umbrella");
+
+        return stringStack;
+    }
+
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        System.out.println(App.getGreeting());
+
+
+        // create and print int Stack
+        Stack<Integer> intStack = App.createIntStack(5);
+        App.printStack(intStack);
+        
+
+        // create and print a String Stack
+        Stack<String> stringStack = App.createStringStack();
+        App.printStack(stringStack);
     }
 }
