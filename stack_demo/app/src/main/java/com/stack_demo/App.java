@@ -38,7 +38,7 @@ public class App {
         Random randGen = new Random();
 
         // add items
-        for (int i; i < 5; i++) {
+        for (int i = 0; i < 5; i++) {
             intStack.push(randGen.nextInt(100));
         }
 
