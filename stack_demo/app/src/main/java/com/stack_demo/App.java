@@ -7,6 +7,24 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Stack;
 
+class Dog implements Mammal {
+    // Dog provides its own speak() implementation
+    public void speak() {
+        System.out.println("Woof! Woof!");
+    }
+}
+
+class Cat implements Mammal {
+    // Cat provides its own speak() implementation
+    public void speak() {
+        System.out.println("Meow! Meow!");
+    }
+}
+
+class MuteKoala implements Mammal {
+    // mute koala is mute is no speak() implementation :(
+}
+
 public class App {
     /**
      * Default method used in Junit tests to make sure the suite is working correctly.
@@ -14,6 +32,18 @@ public class App {
     */
     public static String getGreeting() {
         return "Hello World!";
+    }
+
+    /**
+     * Makes a sound for each animal in a Stack if not empty.
+     * WARNING: It empties the stack in the process!
+     * @param pets Stack of Mammal objects
+     */
+    public static void annoyNeighbors(Stack<? extends Mammal> pets) {
+        while (!pets.empty()) {
+            Mammal animal = pets.pop();
+            animal.speak();
+        }
     }
 
     /**
@@ -59,17 +89,28 @@ public class App {
         return stringStack;
     }
 
+    public static Stack<Mammal> createMammalStack() {
+        Stack<Mammal> pets = new Stack<Mammal>();
+        pets.push(new Dog());
+        pets.push(new Cat());
+        pets.push(new MuteKoala());
+
+        return pets;
+    }
+
     public static void main(String[] args) {
         System.out.println(App.getGreeting());
-
 
         // create and print int Stack
         Stack<Integer> intStack = App.createIntStack(5, 100);
         App.printStack(intStack);
-        
 
         // create and print a String Stack
         Stack<String> stringStack = App.createStringStack();
         App.printStack(stringStack);
+
+        // create and print an animal Stack
+        Stack<Mammal> mammalStack = App.createMammalStack();
+        App.annoyNeighbors(mammalStack);
     }
 }
