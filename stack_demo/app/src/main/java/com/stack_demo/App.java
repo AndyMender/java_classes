@@ -7,22 +7,20 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Stack;
 
-class Dog implements Mammal {
-    // Dog provides its own speak() implementation
-    public void speak() {
+class Dog implements Animal {
+    public void howl() {
         System.out.println("Woof! Woof!");
     }
 }
 
-class Cat implements Mammal {
-    // Cat provides its own speak() implementation
-    public void speak() {
+class Cat implements Animal {
+    public void howl() {
         System.out.println("Meow! Meow!");
     }
 }
 
-class MuteKoala implements Mammal {
-    // mute koala is mute is no speak() implementation :(
+class MuteKoala implements Animal {
+    // mute koala is mute - no howl() implementation :(
 }
 
 public class App {
@@ -39,10 +37,10 @@ public class App {
      * WARNING: It empties the stack in the process!
      * @param pets Stack of Mammal objects
      */
-    public static void annoyNeighbors(Stack<? extends Mammal> pets) {
+    public static void annoyNeighbors(Stack<? extends Animal> pets) {
         while (!pets.empty()) {
-            Mammal animal = pets.pop();
-            animal.speak();
+            Animal animal = pets.pop();
+            animal.howl();
         }
     }
 
@@ -89,8 +87,8 @@ public class App {
         return stringStack;
     }
 
-    public static Stack<Mammal> createMammalStack() {
-        Stack<Mammal> pets = new Stack<Mammal>();
+    public static Stack<Animal> createMammalStack() {
+        Stack<Animal> pets = new Stack<Animal>();
         pets.push(new Dog());
         pets.push(new Cat());
         pets.push(new MuteKoala());
@@ -110,7 +108,7 @@ public class App {
         App.printStack(stringStack);
 
         // create and print an animal Stack
-        Stack<Mammal> mammalStack = App.createMammalStack();
+        Stack<Animal> mammalStack = App.createMammalStack();
         App.annoyNeighbors(mammalStack);
     }
 }
