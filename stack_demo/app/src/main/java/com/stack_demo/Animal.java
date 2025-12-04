@@ -4,7 +4,7 @@ public interface Animal {
     /**
      * Prints generic animal sounds to stdout.
      */
-    default void howl() {
+    default public void howl() {
         System.out.println("*Generic animal sounds*");
     }
 }

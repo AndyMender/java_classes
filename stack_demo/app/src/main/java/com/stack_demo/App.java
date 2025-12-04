@@ -7,12 +7,20 @@ import java.util.Random;
 import java.util.Stack;
 
 class Dog implements Animal {
+    /**
+     * Overrides howl() to generate dog-specific sounds.
+    */
+    @Override
     public void howl() {
         System.out.println("Woof! Woof!");
     }
 }
 
 class Cat implements Animal {
+    /**
+     * Overrides howl() to generate cat-specific sounds.
+    */
+    @Override
     public void howl() {
         System.out.println("Meow! Meow!");
     }
